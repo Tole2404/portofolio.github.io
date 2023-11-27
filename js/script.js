@@ -20,14 +20,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
-  form.addEventListener("submit", function (event) {
+  const contactForm = document.getElementById("contactForm");
+  contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
+    const formData = new FormData(contactForm);
 
-    // Add your Sweet Alert configuration here
-    swal("Message Sent!", "Thank you for contacting me.", "success");
-
-    // Optionally, you can reset the form after submission
-    form.reset();
+    fetch("send_email.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "success") {
+          swal("Message Sent!", "Thank you for contacting me.", "success");
+          contactForm.reset();
+        } else {
+          swal("Error", "Something went wrong. Please try again later.", "error");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        swal("Error", "Something went wrong. Please try again later.", "error");
+      });
   });
 });
