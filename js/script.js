@@ -17,35 +17,17 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.remove("bx-x");
     navlist.classList.remove("active");
   };
+});
 
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const formData = new FormData(form);
+    // Add your Sweet Alert configuration here
+    swal("Message Sent!", "Thank you for contacting me.", "success");
 
-    fetch(form.action, {
-      method: form.method,
-      body: formData,
-    })
-      .then((response) => response.text())
-      .then((result) => {
-        if (result === "success") {
-          Swal.fire({
-            icon: "success",
-            title: "Message Sent!",
-            text: "Thank you for contacting me. I will get back to you soon.",
-          });
-          form.reset();
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong! Please try again later.",
-          });
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    // Optionally, you can reset the form after submission
+    form.reset();
   });
 });

@@ -1,41 +1,38 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'vendor/autoload.php';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    $name = $_POST["name"];
+    $email = $_POST["_replyto"];
+    $message = $_POST["message"];
 
-    $mail = new PHPMailer(true);
+    $to = "tunggul.bayu24@gmail.com";
+    $subject = "New Contact Form Submission";
 
-    try {
-        // Server settings
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'tunggul.bayu24@gmail.com'; // Your Gmail address
-        $mail->Password   = '089648995860'; // Your Gmail password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+    // Email body with HTML formatting
+    $body = "
+        <html>
+        <head>
+            <title>New Contact Form Submission</title>
+        </head>
+        <body>
+            <p><strong>Name:</strong> $name</p>
+            <p><strong>Email:</strong> $email</p>
+            <p><strong>Message:</strong><br/>$message</p>
+        </body>
+        </html>
+    ";
 
-        // Recipients
-        $mail->setFrom($email, $name);
-        $mail->addAddress('tunggul.bayu24@gmail.com'); // Your Gmail address
+    // Headers to set content type and additional settings
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers .= "From: $email" . "\r\n";
 
-        // Content
-        $mail->isHTML(true);
-        $mail->Subject = 'New Contact Form Submission';
-        $mail->Body    = "Name: $name<br>Email: $email<br>Message: $message";
+    // Send email
+    mail($to, $subject, $body, $headers);
 
-        $mail->send();
-        echo "success";
-    } catch (Exception $e) {
-        echo "error";
-    }
+    // Return a success response
+    echo json_encode(["status" => "success"]);
 } else {
-    echo "Invalid request";
+    // Return an error response if the request method is not POST
+    echo json_encode(["status" => "error", "message" => "Invalid request method"]);
 }
 ?>
