@@ -22,6 +22,7 @@
     />
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="path/to/sweetalert2.min.css">
 
   </head>
   <body>
@@ -219,6 +220,7 @@
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="path/to/sweetalert2.all.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
       function sendEmail(){
@@ -231,7 +233,14 @@
               + "<br> Email: " + document.getElementById("email").value
               + "<br> Pesan: " + document.getElementById("message").value  
           }).then(
-            message => alert("message berhasil")
+                () => {
+            Swal.fire({
+              title: 'Message Berhasil!',
+              text: 'Email Anda berhasil dikirim.',
+              icon: 'success',
+              confirmButtonText: 'OK'
+            });
+          }
           );  
         }
     </script>
