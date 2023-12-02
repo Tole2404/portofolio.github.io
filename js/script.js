@@ -26,10 +26,18 @@ const sendEmail = (e) => {
 
   emailjs.sendForm("service_ie9gnh1", "template_1y029s9", "#contact-formm", "P6ZhITkvarZHvOU16").then(
     () => {
-      contactMessage.textContent = "Message sent successfully ✅";
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Message sent successfully ✅",
+      });
     },
     () => {
-      contactMessage.textContent = "Message not sent ❌ ";
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Message not sent ❌",
+      });
     }
   );
 };
