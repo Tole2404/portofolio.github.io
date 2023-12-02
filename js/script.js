@@ -19,12 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
-const contactForm = document.getElementById("contact-form"),
+const contactForm = document.getElementById("contact-formm"),
   contactMessage = document.getElementById("contact-message");
 const sendEmail = (e) => {
   e.preventDefault();
 
-  emailjs.sendForm("service_ie9gnh1", "template_6mdzuvs", "#contact-form", "P6ZhITkvarZHvOU16").then(
+  emailjs.sendForm("service_ie9gnh1", "template_1y029s9", "#contact-formm", "P6ZhITkvarZHvOU16").then(
     () => {
       contactMessage.textContent = "Message sent successfully ✅";
     },
