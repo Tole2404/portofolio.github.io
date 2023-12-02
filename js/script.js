@@ -19,28 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const contactForm = document.getElementById("contactForm");
-  contactForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const formData = new FormData(contactForm);
+const contactForm = document.getElementById("contact-form"),
+  contactMessage = document.getElementById("contact-message");
+const sendEmail = (e) => {
+  e.preventDefault();
 
-    fetch("send_email.php", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.status === "success") {
-          swal("Message Sent!", "Thank you for contacting me.", "success");
-          contactForm.reset();
-        } else {
-          swal("Error", "Something went wrong. Please try again later.", "error");
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        swal("Error", "Something went wrong. Please try again later.", "error");
-      });
-  });
-});
+  emailjs.sendForm("service_ie9gnh1", "template_6mdzuvs", "#contact-form", "P6ZhITkvarZHvOU16").then(
+    () => {
+      contactMessage.textContent = "Message sent successfully ✅";
+    },
+    () => {
+      contactMessage.textContent = "Message not sent ❌ ";
+    }
+  );
+};
+contactForm.addEventListener("submit", sendEmail);

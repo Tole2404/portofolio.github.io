@@ -22,7 +22,6 @@
     />
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="path/to/sweetalert2.min.css">
 
   </head>
   <body>
@@ -197,11 +196,12 @@
         </div>
 
         <div class="contact-form" data-aos="zoom-in">
-            <form onsubmit="sendEmail();reset();return false;" method="POST">
+            <form action="" class="contact--form" id="contact-form">
                 <input type="text" id="name" name="name" placeholder="Your name" required>
                 <input type="email" id="email" name="email" placeholder="Email Address.." required>
                 <textarea name="message" id="message" cols="30" rows="10" placeholder="Write message here.." required></textarea>
                 <input type="submit" name="submit" value="Send Message" class="send-btn">
+                <p class="contact__message" id="contact-message"></p>
             </form>
         </div>
     </section>
@@ -220,29 +220,8 @@
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="path/to/sweetalert2.all.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script>
-      function sendEmail(){
-        Email.send({
-          secureToken: "cd044510-b826-4ce4-8802-1b32783b2211",
-          To : 'tunggul.bayu24@gmail.com',
-          From : document.getElementById("email").value,
-          Subject : "Kontak Masuk Dari Portofolio",
-          Body : "Nama" + document.getElementById("name").value
-              + "<br> Email: " + document.getElementById("email").value
-              + "<br> Pesan: " + document.getElementById("message").value  
-          }).then(
-                () => {
-            Swal.fire({
-              title: 'Message Berhasil!',
-              text: 'Email Anda berhasil dikirim.',
-              icon: 'success',
-              confirmButtonText: 'OK'
-            });
-          }
-          );  
-        }
     </script>
   
     <script>
