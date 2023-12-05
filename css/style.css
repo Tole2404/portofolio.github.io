@@ -120,7 +120,7 @@ section {
   border-radius: 50%;
   backdrop-filter: brightness(88%);
   font-size: 20px;
-  margin-right: 17px;
+  margin-right: 5px;
   box-shadow: 0 0 20px transparent;
   cursor: pointer;
   transition: all 0.5s ease;
@@ -347,6 +347,119 @@ form .send-btn:hover {
   font-size: 27px;
 }
 
+/* PROJECT 1 */
+
+.project-hero {
+  color: var(--main-color);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+}
+.project-hero_content {
+  padding: 8.5rem 0 3rem 0;
+  max-width: 90rem;
+  width: 92%;
+  margin: auto;
+}
+.project-hero_content h2 {
+  color: var(--text-color);
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 1000;
+}
+.project-hero_info {
+  margin: 1rem auto 0 auto;
+  max-width: 50rem;
+}
+.project-hero_info p {
+  color: var(--other-color);
+  font-size: var(--p-font);
+  text-align: center;
+  width: 100%;
+  line-height: 1.6;
+}
+.project-cs-hero_link {
+  margin-top: 8rem;
+  text-align: center;
+}
+.main-container {
+  max-width: 100rem;
+  margin: auto;
+  width: 92%;
+  background-position: center;
+}
+.project-details__content {
+  padding: 0.5rem 0;
+  max-width: 90rem;
+  margin: auto;
+  width: 92%;
+}
+.project-details__content-main {
+  width: 100%;
+  margin: auto;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+.project-details__content-title {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+.skills__skill {
+  padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+  font-size: 1.6rem;
+  background: var(--main-color);
+  border-radius: 5px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.project-details__desc {
+  margin: 0 0 5rem 0;
+}
+.project-details__desc-para {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+.project-details__showcase-img-cont {
+  width: 100%;
+  margin-bottom: 6rem;
+}
+
+.project-details__showcase-img {
+  width: 100%;
+}
+.project-details__tools-used {
+  margin: 0 0 7rem 0;
+}
+.project-details__tools-used-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .project-cs-hero__content h2 {
+    font-size: var(--h2-font);
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .project-cs-hero__content {
+    padding: 19rem 0 13rem 0;
+    margin: auto;
+    position: static;
+    transform: translate(0, 0);
+  }
+}
+
 @media (max-width: 1700px) {
   header {
     padding: 20px 8%;
@@ -365,6 +478,11 @@ form .send-btn:hover {
   }
 }
 
+@media only screen and (max-width: 37.5em) {
+  .project-hero_content h2 {
+    font-size: 4.5rem;
+  }
+}
 @media (max-width: 1380px) {
   header {
     padding: 20px 5%;
@@ -470,6 +588,11 @@ form .send-btn:hover {
     border-radius: 50%;
     object-fit: cover;
     margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .project-details__content-title {
+    font-size: 2.4rem;
   }
 }
 @keyframes move {
