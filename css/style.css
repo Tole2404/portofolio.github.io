@@ -261,7 +261,7 @@ header.sticky {
   height: 55px;
   font-size: 27px;
   border-radius: 50%;
-  color: var(--toxt-color);
+  color: var(--text-color);
   background: #075fe4;
 }
 .row h4 {
@@ -427,7 +427,7 @@ form .send-btn:hover {
 .project-details__desc-para {
   font-size: 1rem;
   line-height: 1.7;
-  color: var(--text-color);
+  color: var(--other-color);
   margin-bottom: 2rem;
   max-width: 100%;
 }
