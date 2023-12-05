@@ -269,6 +269,7 @@ header.sticky {
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.4;
+  color: var(--text-color);
 }
 .row:hover {
   border: 1px solid var(--main-color);
