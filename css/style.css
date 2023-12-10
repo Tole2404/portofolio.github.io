@@ -194,7 +194,7 @@ header.sticky {
   background: var(--main-color);
   border: 2px solid var(--other-color);
   display: inline-block;
-  padding: 10px;
+  padding: 1.5px;
   font-size: 30px;
   text-align: center;
   transition: all 0.5s ease;
@@ -204,6 +204,9 @@ header.sticky {
   background: transparent;
   color: var(--main-color);
   box-shadow: 0 0 20px var(--main-color);
+}
+.skill i {
+  align-items: center;
 }
 .exp-area p span {
   color: var(--other-color);
