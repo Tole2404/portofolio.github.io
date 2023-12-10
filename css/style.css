@@ -401,7 +401,7 @@ form .send-btn:hover {
 }
 .skills {
   display: flex;
-  gap: 10px;
+  gap: 1px;
   flex-wrap: wrap;
 }
 .skill2 {
@@ -414,11 +414,6 @@ form .send-btn:hover {
   transition: all 0.5s ease;
   border-radius: 6px;
   margin: 10px;
-}
-.skill2:hover {
-  background: transparent;
-  color: var(--main-color);
-  box-shadow: 0 0 20px var(--main-color);
 }
 .project-details__content-title {
   font-weight: 700;
