@@ -61,6 +61,9 @@ span {
   color: var(--main-color);
   text-shadow: 3px 3px 20px var(--main-color), -2px 1px 30px var(--text-color);
 }
+.img_saras {
+  border-radius: 5%;
+}
 #menu-icon {
   font-size: 35px;
   z-index: 10001;
@@ -68,7 +71,7 @@ span {
   display: none;
 }
 section {
-  padding: 110px 16% 90px;
+  padding: 110px 16% 70px;
 }
 .home {
   height: 100vh;
@@ -183,6 +186,12 @@ header.sticky {
   font-size: var(--h2-font);
   line-height: 1, 5;
   margin-bottom: 50px;
+}
+.tag {
+  margin-left: 20px;
+}
+.tag li {
+  list-style: disc;
 }
 .exp-area {
   margin-bottom: 100px;
@@ -576,6 +585,12 @@ form .send-btn:hover {
 @media (max-width: 680px) {
   .main-content p {
     width: 100%;
+  }
+  .project-hero_content h2 {
+    font-size: 2.5em;
+  }
+  .project-hero_info p {
+    font-size: 1em;
   }
 }
 
